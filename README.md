@@ -1,5 +1,5 @@
 # Lab 12 : The Ride Hailing Service, Part 3
-C.R. Calabrese, July 1, 2021
+Tyler Calabrese, July 1, 2021
 CS 120: Web Programming with Prof. Ming Chow
 
 ## Parts Completed
@@ -28,7 +28,7 @@ I've spent about four hours on this lab.
 
 # Lab 11 : Getting Started with the Server Side using Heroku and Node.js
 
-C.R. Calabrese, June 29, 2021
+Tyler Calabrese, June 29, 2021
 CS 120: Web Programming with Prof. Ming Chow
 
 ## Parts Completed
