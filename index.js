@@ -122,7 +122,7 @@ express()
     client.query('SELECT * FROM drivers', (error, result) => {
       if (!error) {
         for (var count = 0; count < result.rows.length; count++) {
-            indexPage += '<p>' + result.rows[count].username + 'is offering a ride from (';
+            indexPage += '<p>' + result.rows[count].username + ' is offering a ride from (';
             indexPage += result.rows[count].lat.toString() + ', ' + result.rows[count].lng.toString();
             indexPage += ')</p>';
         }
