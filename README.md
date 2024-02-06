@@ -9,6 +9,7 @@ parameters are given in the body of the POST message.
 For the "going beyond" items:
 I'm now inserting ride requests into a postgres database.
 I have a path where drivers can send POST requests to offer rides.
+I'm also using the rides that people have offered for the response to /rides.
 
 ## Collaborators
 I completed this lab alone.
