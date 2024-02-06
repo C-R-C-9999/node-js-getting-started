@@ -1,3 +1,20 @@
+# Lab 12 : The Ride Hailing Service, Part 3
+C.R. Calabrese, July 1, 2021
+CS 120: Web Programming with Prof. Ming Chow
+
+## Parts Completed
+I've set up a POST route for my Node application that gives back a list of cars if the correct
+parameters are given in the body of the POST message.
+
+I haven't yet done any of the "Going Beyond" items.
+
+## Collaborators
+I completed this lab alone.
+
+## Time Spent
+I've spent about two hours on this lab.
+
+
 # Lab 11 : Getting Started with the Server Side using Heroku and Node.js
 
 C.R. Calabrese, June 29, 2021
