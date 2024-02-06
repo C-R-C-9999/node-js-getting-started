@@ -10,7 +10,8 @@ For the "going beyond" items:
 I'm now inserting ride requests into a postgres database.
 I have a path where drivers can send POST requests to offer rides.
 I'm also using the rides that people have offered for the response to /rides.
-I'm giving a list of a passenger's ride requests from the route /passenger.json.
+I'm giving a list of a passenger's ride requests from the route /passenger.json, and a vehicle's
+ride offerings from /vehicle.json.
 
 ## Collaborators
 I completed this lab alone.
