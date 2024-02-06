@@ -98,4 +98,13 @@ express()
         });
       res.send("Thank you for offering a ride!!");
   })
+  .post("/passenger.json", cors(), (req, res) => {
+    if (!req.body.username) res.send(JSON.stringify([]);
+    else {
+      client.query('SELECT * FROM riders WHERE username = $1', [req.body.username], (error, result) => {
+          if (error) res.send('{"error" : "There was an error retreiving the user\'s ride requests."}');
+          else res.send(JSON.stringify(result.rows));
+      });
+    }
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
