@@ -88,6 +88,6 @@ express()
           if (error) console.log("there was an error offering a ride:", error);
           else console.log("driver added to db");
         });
-      res.send("Thank you for offering a ride,", req.body.username);
+      res.send("Thank you for offering a ride!!");
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
