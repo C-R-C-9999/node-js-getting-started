@@ -10,6 +10,7 @@ For the "going beyond" items:
 I'm now inserting ride requests into a postgres database.
 I have a path where drivers can send POST requests to offer rides.
 I'm also using the rides that people have offered for the response to /rides.
+I'm giving a list of a passenger's ride requests from the route /passenger.json.
 
 ## Collaborators
 I completed this lab alone.
@@ -19,7 +20,7 @@ still deserves recognition:
 https://dev.to/danielmabadeje/how-to-create-tables-on-heroku-postgresql-1n42
 
 ## Time Spent
-I've spent about three and a half hours on this lab.
+I've spent about four hours on this lab.
 
 
 # Lab 11 : Getting Started with the Server Side using Heroku and Node.js
