@@ -3,6 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const path = require('path')
 const cors = require('cors')
+const validator = require('validator')
 const PORT = process.env.PORT || 5000
 
 const sample_cars =
@@ -45,6 +46,7 @@ const client = new Client({
     }
 });
 client.connect();
+console.log(client);
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
@@ -59,6 +61,23 @@ express()
       res.send('{"error":"Whoops, something is wrong with your data!"}');
     }
     else {
+      // TODO: send the error message above if lat, lng aren't floats
+      // for now, want to adhere to the spec's conditions re when to send the error response
+      if (validator.isFloat(req.body.lat) && validator.isFloat(req.body.lng)) {
+        ride_request = {
+            username : req.body.username,
+            lat : parseFloat(req.body.lat),
+            lng : parseFloat(req.body.lng)
+        };
+        console.log(ride_request);
+        client.query('INSERT INTO riders (ride_requests) VALUES ($1)', [ride_request], (error, result) => {
+            console.log("psql query sent");
+            if (error) console.log("there was an error");
+            else console.log("value inserted");
+        });
+      } else {
+          console.log("lat and lng aren't floats");
+      }
       res.send(JSON.stringify(sample_cars));
     }
   })
