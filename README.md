@@ -13,6 +13,8 @@ I'm also using the rides that people have offered for the response to /rides.
 I'm giving a list of a passenger's ride requests from the route /passenger.json, and a vehicle's
 ride offerings from /vehicle.json.
 
+Finally, the default GET path "/" shows a list of vehicles currently offering rides, in HTML.
+
 ## Collaborators
 I completed this lab alone.
 
