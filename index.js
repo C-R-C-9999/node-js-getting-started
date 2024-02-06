@@ -37,6 +37,15 @@ const sample_cars =
         }
     ]
 
+const { Client } = require('pg');
+const client = new Client({
+    connectionString: process.env.DATABASE_URL || "postgres://nodepsqlapp_user:abc123@localhost:5432/nodepsqlapp",
+    ssl: {
+        rejectUnauthorized : false,
+    }
+});
+client.connect();
+
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .use(bodyParser.urlencoded())
