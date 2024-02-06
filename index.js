@@ -2,6 +2,7 @@ const cool = require('cool-ascii-faces')
 const express = require('express')
 const bodyParser = require('body-parser')
 const path = require('path')
+const cors = require('cors')
 const PORT = process.env.PORT || 5000
 
 const sample_cars =
@@ -39,11 +40,12 @@ const sample_cars =
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .use(bodyParser.urlencoded())
+  .use(cors())
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .get('/cool', (req, res) => res.send(cool()))
-  .post("/rides", (req, res) => {
+  .post("/rides", cors(), (req, res) => {
     if (!req.body.username || !req.body.lat || !req.body.lng) {
       res.send('{"error":"Whoops, something is wrong with your data!"}');
     }
