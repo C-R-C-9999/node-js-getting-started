@@ -74,7 +74,15 @@ express()
       } else {
           console.log("lat and lng aren't floats");
       }
-      res.send(JSON.stringify(sample_cars));
+      client.query('SELECT * FROM drivers', (error, result) => {
+          if (!error) {
+              res.send(JSON.stringify(result.rows));
+          }
+          else {
+              console.log("There was an issue fetching available rides from the database.");
+              res.send(JSON.stringify(sample_cars));
+          }
+      });
     }
   })
   .post("/offerride", cors(), (req, res) => {
