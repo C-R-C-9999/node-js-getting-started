@@ -8,6 +8,7 @@ parameters are given in the body of the POST message.
 
 For the "going beyond" items:
 I'm now inserting ride requests into a postgres database.
+I have a path where drivers can send POST requests to offer rides.
 
 ## Collaborators
 I completed this lab alone.
@@ -17,7 +18,7 @@ still deserves recognition:
 https://dev.to/danielmabadeje/how-to-create-tables-on-heroku-postgresql-1n42
 
 ## Time Spent
-I've spent about three hours on this lab.
+I've spent about three and a half hours on this lab.
 
 
 # Lab 11 : Getting Started with the Server Side using Heroku and Node.js
