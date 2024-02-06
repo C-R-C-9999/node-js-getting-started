@@ -77,4 +77,17 @@ express()
       res.send(JSON.stringify(sample_cars));
     }
   })
+  .post("/offerride", cors(), (req, res) => {
+    if (!req.body.username || !req.body.lat || !req.body.lng ||
+        !validator.isFloat(req.body.lat) || !validator.isFloat(req.body.lng)) {
+      res.send('{"error":"Whoops, something is wrong with your data!"}');
+    }
+    client.query('INSERT INTO drivers VALUES ($1, $2, $3)',
+        [req.body.username, req.body.lat, req.body.lng], (error, result) => {
+          console.log("psql query sent, inserting into 'drivers'");
+          if (error) console.log("there was an error offering a ride:", error);
+          else console.log("driver added to db");
+        });
+      res.send("Thank you for offering a ride,", req.body.username);
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
