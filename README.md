@@ -6,13 +6,18 @@ CS 120: Web Programming with Prof. Ming Chow
 I've set up a POST route for my Node application that gives back a list of cars if the correct
 parameters are given in the body of the POST message.
 
-I haven't yet done any of the "Going Beyond" items, but I'm planning to tomorrow.
+For the "going beyond" items:
+I'm now inserting ride requests into a postgres database.
 
 ## Collaborators
 I completed this lab alone.
 
+I used these instructions when trying to make a table in my database. It didn't work for me, but the author
+still deserves recognition:
+https://dev.to/danielmabadeje/how-to-create-tables-on-heroku-postgresql-1n42
+
 ## Time Spent
-I've spent about two hours on this lab.
+I've spent about three hours on this lab.
 
 
 # Lab 11 : Getting Started with the Server Side using Heroku and Node.js
