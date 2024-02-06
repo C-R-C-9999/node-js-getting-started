@@ -46,7 +46,6 @@ const client = new Client({
     }
 });
 client.connect();
-console.log(client);
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
