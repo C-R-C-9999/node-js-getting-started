@@ -107,4 +107,13 @@ express()
       });
     }
   })
+  .post("/vehicle.json", cors(), (req, res) => {
+    if (!req.body.username) res.send(JSON.stringify([]));
+    else {
+      client.query('SELECT * FROM drivers WHERE username = $1', [req.body.username], (error, result) => {
+          if (error) res.send('{"error" : "There was an error retreiving the user\'s ride offers."}');
+          else res.send(JSON.stringify(result.rows));
+      });
+    }
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
