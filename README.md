@@ -6,7 +6,7 @@ CS 120: Web Programming with Prof. Ming Chow
 I've set up a POST route for my Node application that gives back a list of cars if the correct
 parameters are given in the body of the POST message.
 
-I haven't yet done any of the "Going Beyond" items.
+I haven't yet done any of the "Going Beyond" items, but I'm planning to tomorrow.
 
 ## Collaborators
 I completed this lab alone.
