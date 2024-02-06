@@ -72,7 +72,7 @@ express()
         console.log(ride_request);
         client.query('INSERT INTO riders (ride_requests) VALUES ($1)', [ride_request], (error, result) => {
             console.log("psql query sent");
-            if (error) console.log("there was an error");
+            if (error) console.log("there was an error:", error);
             else console.log("value inserted");
         });
       } else {
