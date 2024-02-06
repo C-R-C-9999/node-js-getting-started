@@ -54,7 +54,6 @@ express()
   .use(cors())
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
   .get('/cool', (req, res) => res.send(cool()))
   .post("/rides", cors(), (req, res) => {
     if (!req.body.username || !req.body.lat || !req.body.lng) {
@@ -115,5 +114,21 @@ express()
           else res.send(JSON.stringify(result.rows));
       });
     }
+  })
+  .get("/", (req, res) => {
+    let indexPage = '<!DOCTYPE html><html lang="en"><head><title>Catch A Ride!</title></head>';
+    indexPage += '<body><h1>People are currently offering rides from:</h1>';
+
+    client.query('SELECT * FROM drivers', (error, result) => {
+      if (!error) {
+        for (var count = 0; count < result.rows.length; count++) {
+            indexPage += '<p>' + result.rows[count].username + 'is offering a ride from (';
+            indexPage += result.rows[count].lat.toString() + ', ' + result.rows[count].lng.toString();
+            indexPage += ')</p>';
+        }
+      }
+      indexPage += '</body></html>';
+      res.send(indexPage);
+    });
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
