@@ -64,7 +64,6 @@ express()
       // TODO: send the error message above if lat, lng aren't floats
       // for now, want to adhere to the spec's conditions re when to send the error response
       if (validator.isFloat(req.body.lat) && validator.isFloat(req.body.lng)) {
-        console.log(ride_request);
         client.query('INSERT INTO riders VALUES ($1, $2, $3)',
             [req.body.username, req.body.lat, req.body.lng], (error, result) => {
             console.log("psql query sent");
