@@ -66,9 +66,10 @@ express()
       if (validator.isFloat(req.body.lat) && validator.isFloat(req.body.lng)) {
         client.query('INSERT INTO riders VALUES ($1, $2, $3)',
             [req.body.username, req.body.lat, req.body.lng], (error, result) => {
-            console.log("psql query sent");
-            if (error) console.log("there was an error:", error);
-            else console.log("value inserted");
+            console.log("psql query sent, inserting into 'riders'");
+            // TODO: What's the field for the actual error message text?
+            if (error) console.log("there was an error finding rides:", error);
+            else console.log("rider added to db");
         });
       } else {
           console.log("lat and lng aren't floats");
